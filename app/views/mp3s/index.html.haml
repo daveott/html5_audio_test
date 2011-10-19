@@ -1,0 +1,10 @@
+%table
+  %tr
+    - ["Title", "Artist", "URL", "Length"].each do |header|
+      %th= header
+  - mp3s.each do |mp3|
+    %tr
+      %td= mp3.title
+      %td= mp3.artist.full_name
+      %td= mp3.url
+      %td= pluralize(mp3.length, 'second')

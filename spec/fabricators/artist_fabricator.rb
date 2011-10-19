@@ -1,0 +1,2 @@
+Fabricator(:artist) do
+end
