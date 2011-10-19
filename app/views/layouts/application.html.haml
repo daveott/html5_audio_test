@@ -1,0 +1,23 @@
+!!! 5
+%html(lang="en-US")
+  %head
+    %title MP3 Test
+    %meta(charset="UTF-8")
+    = stylesheet_link_tag "application"
+    = yield :head
+  %body
+    .header
+      %h1 MP3 Test
+    %nav
+      %ul
+        %li= link_to "MP3's", mp3s_path
+    #content
+      #breadcrumbs
+        = yield :breadcrumbs
+
+      - if flash.any?
+        .flash
+          - flash.each do |type, message|
+            %div(id = "flash_#{type}")= message
+
+      = yield
