@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'decent_exposure'
 gem 'fabrication'
+gem 'haml'
 gem 'pg'
 gem 'rails', '3.1.1'
 
