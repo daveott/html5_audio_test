@@ -87,6 +87,7 @@ GEM
     mime-types (1.16)
     multi_json (1.0.3)
     nokogiri (1.5.0)
+    pg (0.11.0)
     pickler (0.2.1)
       crack (>= 0.1.8)
     polyglot (0.3.2)
@@ -176,6 +177,7 @@ DEPENDENCIES
   fuubar-cucumber
   itslog
   launchy
+  pg
   pickler
   rails (= 3.1.1)
   rspec-rails

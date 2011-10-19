@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 
+gem 'pg'
 gem 'rails', '3.1.1'
 
 group :development, :test do
