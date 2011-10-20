@@ -4,7 +4,7 @@
       %th= header
   - mp3s.each do |mp3|
     %tr
-      %td= mp3.title
+      %td= link_to mp3.title, mp3
       %td= mp3.artist.full_name
       %td= mp3.url
       %td= pluralize(mp3.length, 'second')
