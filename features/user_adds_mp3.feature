@@ -32,7 +32,7 @@ Feature: User adds mp3
     And I fill in "URL" with "http://mp3.com/civilians.mp3"
     And I fill in "Length in seconds" with "123456"
     And I press "Add MP3"
-    Then I should see "MP3 was successfully created"
+    Then I should see "MP3 was successfully saved"
     And I should see "Civilians" in the "Title" section
     And I should see "Joe Henry" in the "Artist" section
     And I should see "http://mp3.com/civilians.mp3" in the "URL" section

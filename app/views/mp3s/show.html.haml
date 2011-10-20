@@ -14,4 +14,11 @@
   %dt Average rating
   %dd= mp3.average_rating
 
+= form_for mp3 do |f|
+  - (1..5).each do |rating|
+    %label
+      = radio_button_tag "mp3[ratings_attributes][][score]", rating
+      = rating
+  = f.submit "Rate"
+
 = link_to "Remove", mp3_path(mp3), method: :delete

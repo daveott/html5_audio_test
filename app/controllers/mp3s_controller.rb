@@ -3,8 +3,9 @@ class Mp3sController < ApplicationController
   expose(:mp3)
 
   def create
-    respond_with mp3.tap(&:save), notice: "MP3 was successfully created."
+    respond_with mp3.tap(&:save), notice: "MP3 was successfully saved."
   end
+  alias update create 
 
   def destroy
     mp3.destroy

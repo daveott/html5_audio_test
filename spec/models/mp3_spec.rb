@@ -13,7 +13,7 @@ describe Mp3 do
       before do
         mp3.ratings << Fabricate(:rating, score: 5)
       end
-      it { should == 5 }
+      it { should == 5.0 }
     end
 
     context "3 ratings yielding whole number" do
@@ -22,7 +22,7 @@ describe Mp3 do
         mp3.ratings << Fabricate(:rating, score: 4)
         mp3.ratings << Fabricate(:rating, score: 3)
       end
-      it { should == 4 }
+      it { should == 4.0 }
     end
 
     context "5 ratings yielding floating point number" do
