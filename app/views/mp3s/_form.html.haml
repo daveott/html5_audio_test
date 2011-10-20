@@ -1,0 +1,16 @@
+%fieldset
+  %dl
+    %dt= f.label :artist_id
+    %dd= f.select :artist_id, options_from_collection_for_select(Artist.all, 'id', 'full_name')
+
+    %dt= f.label :title
+    %dd= f.text_field :title
+
+    %dt= f.label :url, "URL"
+    %dd= f.text_field :url
+
+    %dt= f.label :length, "Length in seconds"
+    %dd= f.text_field :length
+
+%fieldset.actions
+  = f.submit "Add MP3"

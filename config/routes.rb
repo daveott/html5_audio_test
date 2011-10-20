@@ -1,4 +1,4 @@
 Html5AudioTest::Application.routes.draw do
-  resources :mp3s, only: [:index, :show]
+  resources :mp3s, except: [:edit, :destroy]
   root :to => 'dashboard#show'
 end
