@@ -5,6 +5,7 @@ gem 'fabrication'
 gem 'haml'
 gem 'pg'
 gem 'rails', '3.1.1'
+gem 'responders'
 
 group :development, :test do
   gem 'capybara'
