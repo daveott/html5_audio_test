@@ -8,6 +8,14 @@ describe Mp3 do
   describe "#average_rating" do
     let(:mp3) { Fabricate(:mp3) }
     subject { mp3.average_rating }
+
+    context "1 rating" do
+      before do
+        mp3.ratings << Fabricate(:rating, score: 5)
+      end
+      it { should == 5 }
+    end
+
     context "3 ratings yielding whole number" do
       before do
         mp3.ratings << Fabricate(:rating, score: 5)
@@ -26,6 +34,10 @@ describe Mp3 do
         mp3.ratings << Fabricate(:rating, score: 5)
       end
       it { should == 4.4 }
+    end
+
+    context "no ratings" do
+      it { should be_nil }
     end
   end
 end

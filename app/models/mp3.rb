@@ -5,6 +5,6 @@ class Mp3 < ActiveRecord::Base
   validates :title, presence: true
 
   def average_rating
-    ratings.sum(:score).to_f / ratings.count
+    ratings.sum(:score).to_f / ratings.count if ratings.any?
   end
 end
