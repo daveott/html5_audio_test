@@ -7,6 +7,7 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'rails', '3.1.1'
 gem 'responders'
+gem 'sass'
 
 group :development, :test do
   gem 'capybara'
