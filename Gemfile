@@ -9,6 +9,11 @@ gem 'rails', '3.1.1'
 gem 'responders'
 gem 'sass'
 
+group :assets do
+  gem 'coffee-rails'
+  gem 'uglifier'
+end
+
 group :development, :test do
   gem 'capybara'
   gem 'cucumber-rails'
