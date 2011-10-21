@@ -7,3 +7,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(function() {
+  $("#playlist_order").change(function() {
+    var $e = $(this);
+    console.log($e.find(":selected").val());
+    if ($e.find("option:selected").val() === "rating") {
+      $("#playlist_rating").show();
+    }
+  });
+});

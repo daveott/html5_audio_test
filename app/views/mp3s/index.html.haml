@@ -3,6 +3,11 @@
   %select(name="playlist[order]" id="playlist_order")
     %option(value="all")
     %option(value="artist_name") Artist name
+    %option(value="rating") Rating >=
+  %select{name: "playlist[rating]", id: "playlist_rating", style: "display:none"}
+    %option(selected="select")
+    - 5.times do |i|
+      %option= i+1
   %input(type="submit" value="Download playlist")
 
 = link_to "Add New MP3", new_mp3_path

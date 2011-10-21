@@ -18,7 +18,7 @@ describe Playlist do
 
     before do
       Playlist.stub(:new).and_return(playlist)
-      Playlist.should_receive(:new).with(order).and_return(playlist)
+      Playlist.should_receive(:new).with(order, nil).and_return(playlist)
       playlist.should_receive(:compose!).and_return("#EXTM3U")
     end
 

@@ -16,6 +16,15 @@ describe Mp3 do
     it { should == [civilians, unsophisticated_heart] }
   end
 
+  describe ".rating" do
+    subject { Mp3.rating(3) }
+    before do
+      civilians.ratings << Fabricate(:rating, score: 3)
+      unsophisticated_heart.ratings << Fabricate(:rating, score: 2)
+    end
+    it { should == [civilians] }
+  end
+
   describe "#average_rating" do
     let(:mp3) { Fabricate(:mp3) }
     subject { mp3.average_rating }

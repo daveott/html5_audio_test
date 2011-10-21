@@ -8,6 +8,10 @@ class Mp3 < ActiveRecord::Base
 
   scope :artist_name, joins(:artist).order("artists.first_name, artists.last_name ASC")
 
+  scope :rating, ->(rating) {
+    joins(:ratings).where("ratings.score >= #{rating}").uniq
+  }
+
   def average_rating
     sprintf("%.1f", (calculate_average_rating)).to_f if ratings.any?
   end
