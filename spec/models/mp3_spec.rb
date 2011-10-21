@@ -40,4 +40,9 @@ describe Mp3 do
       it { should be_nil }
     end
   end
+
+  describe "#to_s" do
+    subject { civilians.to_s }
+    it { should == "#EXTINF:12345, Joe Henry - Civilians" }
+  end
 end

@@ -1,4 +1,11 @@
+%form{action: playlists_path, method: :get}
+  %label(for="playlist_order") Order by
+  %select(name="playlist[order]" id="playlist_order")
+    %option(value="all")
+  %input(type="submit" value="Download playlist")
+
 = link_to "Add New MP3", new_mp3_path
+
 %table
   %tr
     - ["Title", "Artist", "URL", "Length"].each do |header|
