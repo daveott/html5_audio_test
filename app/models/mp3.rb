@@ -7,7 +7,11 @@ class Mp3 < ActiveRecord::Base
   validates :title, presence: true
 
   def average_rating
-    return unless ratings.any?
-    sprintf("%.1f", (ratings.sum(:score).to_f / ratings.count)).to_f
+    sprintf("%.1f", (calculate_average_rating)).to_f if ratings.any?
+  end
+
+  private
+  def calculate_average_rating
+    ratings.sum(:score).to_f / ratings.count
   end
 end
