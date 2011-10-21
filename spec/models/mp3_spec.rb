@@ -5,6 +5,17 @@ describe Mp3 do
   it { should have_many(:ratings) }
   it { should validate_presence_of(:title) }
 
+  let(:joe_henry) { Fabricate(:artist, first_name: "Joe", last_name: "Henry") }
+  let(:joe_pug) { Fabricate(:artist, first_name: "Joe", last_name: "Pug") }
+  let!(:unsophisticated_heart) { Fabricate(:mp3, title: "Unsophisticated Heart", artist: joe_pug) }
+  let!(:civilians) { Fabricate(:mp3, title: "Civilians", artist: joe_henry, length: 12345) }
+
+
+  describe ".artist_name" do
+    subject { Mp3.artist_name }
+    it { should == [civilians, unsophisticated_heart] }
+  end
+
   describe "#average_rating" do
     let(:mp3) { Fabricate(:mp3) }
     subject { mp3.average_rating }

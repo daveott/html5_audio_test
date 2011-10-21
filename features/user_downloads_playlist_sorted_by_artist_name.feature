@@ -1,9 +1,10 @@
-@http://www.pivotaltracker.com/story/show/19904803 @m3u
-Feature: User downloads playlist for library
-  In order to listen to easily shuffle though songs
-  As a user viewing the mp3 list
-  I want to download a playlist of all songs in the library
+@http://www.pivotaltracker.com/story/show/19906707 @m3u
+Feature: User downloads playlist sorted by artist name
+  In order to organize my playlist
+  As a user viewing the list of mp3's
+  I want to download a playlist sorted by artist name
 
+  Select order by artist name
   Click download playlist
   Browser prompts me to save playlist to my computer
 
@@ -14,5 +15,6 @@ Feature: User downloads playlist for library
       | Reverie   |
     And I am on the dashboard page
     When I follow "MP3's"
+    And I select "Artist name" from "Order by"
     And I press "Download playlist"
     Then I should not get a "400" response

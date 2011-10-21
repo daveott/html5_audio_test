@@ -6,6 +6,8 @@ class Mp3 < ActiveRecord::Base
 
   validates :title, presence: true
 
+  scope :artist_name, joins(:artist).order("artists.first_name, artists.last_name ASC")
+
   def average_rating
     sprintf("%.1f", (calculate_average_rating)).to_f if ratings.any?
   end

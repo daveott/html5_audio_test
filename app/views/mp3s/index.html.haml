@@ -2,6 +2,7 @@
   %label(for="playlist_order") Order by
   %select(name="playlist[order]" id="playlist_order")
     %option(value="all")
+    %option(value="artist_name") Artist name
   %input(type="submit" value="Download playlist")
 
 = link_to "Add New MP3", new_mp3_path
