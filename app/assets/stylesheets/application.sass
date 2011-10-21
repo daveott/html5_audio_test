@@ -1,0 +1,165 @@
+@import "mixins"
+
+body
+  font: normal 14px Helvetica, Arial, sans-serif
+  color: #333333
+
+a
+  color: #107FC9
+  &:hover
+    text-decoration: none
+  &.button
+    +button
+    float: left
+    &:hover
+      background-color: #2091dc
+  &.add
+    +button(#14b314)
+    padding: 7px 8px
+    float: right
+    margin-top: 15px
+    clear: left
+    &:hover
+      background-color: #20c520
+  &.remove
+    background-color: red
+
+.site_column
+  width: 940px
+  padding: 0 10px
+  margin: 0 auto
+
+h1
+  padding: 0 0 10px 0
+  font-size: 22px
+  color: #000000
+
+dl
+  dt
+    padding: 0 0 3px 0
+    font-weight: bold
+    color: #000000
+  dd
+    padding: 0 0 15px 0
+
+form
+  dl
+    dt
+      padding: 0 0 5px 0
+      label
+        font-weight: bold
+      &.error
+        color: #b00b00
+      .field_with_errors
+        label
+          color: #c95353
+    dd
+      padding: 0 0 10px 0
+      input[type="text"], input[type="password"]
+        +input
+        margin: 0 0 5px 0
+        &:focus
+          color: #333333
+      input[type="file"]
+        margin: 0 0 5px 0
+      textarea
+        +input
+        height: 80px
+        margin: 0 0 5px 0
+        padding-top: 4px
+      select
+        margin: 0 0 5px 0
+      &.error
+        input[type="text"], input[type="password"]
+          border-color: #b00b00
+          background: #faafaa
+  label.checkbox
+    display: block
+    padding: 0 0 10px 10px
+    font-weight: bold
+  fieldset
+    float: left
+  fieldset.actions
+    padding: 0
+    input[type="submit"], button
+      +button
+      padding: 6px 20px
+      margin: 15px 10px 0 10px
+    a.cancel
+      +button(#a6a5a5)
+      padding: 7px 10px
+    p
+      padding: 10px 0 0 0
+      a
+        margin: 0 5px 0 0
+
+form.edit_mp3
+  margin-top: 20px
+  display: block
+  height: 50px
+  fieldset
+    padding: 5px
+  fieldset.actions
+    margin: 0
+    padding: 0
+    input[type="submit"]
+      margin: 0 0 0 15px
+      padding: 0
+      float: left
+      +button
+
+table.standard
+  width: 100%
+  margin: 20px 0 20px 0
+  border-spacing: 0
+  border-collapse: collapse
+  clear: both
+  th
+    padding: 8px 8px
+    font-size: 13px
+    text-align: left
+    border-bottom: 1px solid #E0E0E0
+    background: #EEE
+  tbody
+    td
+      padding: 5px
+
+body
+  > header
+    position: relative
+    @extend .site_column
+    height: 140px
+    background: #EEEEEE
+    h1
+      padding: 15px 0 0 20px
+      font-size: 24px
+      a
+        display: block
+        width: 206px
+        height: 71px
+        text-indent: -9000px
+        overflow: hidden
+        background: transparent url("/images/logo.png") no-repeat
+        text-decoration: none
+    nav
+      position: absolute
+      left: 20px
+      bottom: 0
+      z-index: 1
+      li
+        float: left
+        padding: 0 10px 0 0
+        font-size: 18px
+        font-weight: bold
+        a
+          display: block
+          padding: 8px 10px
+          text-decoration: none
+        &.active
+          a
+            color: #333333
+            background: #ffffff
+
+#content
+  @extend .site_column
+  padding: 40px 10px

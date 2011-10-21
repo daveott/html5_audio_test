@@ -10,9 +10,9 @@
   %body
     %header
       %h1 MP3 Test
-    %nav
-      %ul
-        %li= link_to "MP3's", mp3s_path
+      %nav
+        %ul
+          %li.active= link_to "MP3's", mp3s_path
     #content
       #breadcrumbs
         = yield :breadcrumbs
